@@ -1,0 +1,40 @@
+ /* UI */
+
+.card {
+  padding: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: lightgray;
+  font-size: .9rem;
+}
+
+ /* Recipe */
+
+.recipe {
+  display: grid;
+  gap: .5rem;
+
+}
+
+.recipe__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.recipe__btn-group {
+  display: flex;
+  gap: .5rem;
+}
+
+.recipe__section h4 {
+  font-weight: bold;
+}
+
