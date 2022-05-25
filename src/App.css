@@ -1,4 +1,10 @@
- /* UI */
+/* Global */
+
+li {
+  list-style-position: inside;
+}
+
+/* UI */
 
 .card {
   padding: 2rem;
@@ -13,15 +19,14 @@
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: lightgray;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
- /* Recipe */
+/* Recipe */
 
 .recipe {
   display: grid;
-  gap: .5rem;
-
+  gap: 0.5rem;
 }
 
 .recipe__title {
@@ -31,10 +36,9 @@
 
 .recipe__btn-group {
   display: flex;
-  gap: .5rem;
+  gap: 0.5rem;
 }
 
 .recipe__section h4 {
   font-weight: bold;
 }
-

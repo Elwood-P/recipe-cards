@@ -1,4 +1,6 @@
 import React from 'react';
+import IngredientsList from './IngredientsList';
+import InstructionsList from './InstructionsList';
 
 const Recipe = (props) => {
   const { name, cookTime, servings, instructions, ingredients } = props;
@@ -22,23 +24,11 @@ const Recipe = (props) => {
       </section>
       <section className="recipe__section">
         <h4>Instructions</h4>
-        <ol>
-          {instructions.map((instruction) => {
-            return <li>{instruction}</li>;
-          })}
-        </ol>
+        <InstructionsList instructions={instructions} />
       </section>
       <section className="recipe__section">
         <h4>Ingredients</h4>
-          <ul>
-            {ingredients.map((ingredient) => {
-              return (
-                <li>
-                  {ingredient.name}: {ingredient.amount}
-                </li>
-              );
-            })}
-          </ul>
+        <IngredientsList ingredients={ingredients} />
       </section>
     </div>
   );
