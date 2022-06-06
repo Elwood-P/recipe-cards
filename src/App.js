@@ -1,3 +1,4 @@
+import './normalize.css';
 import './App.css';
 
 import DUMMY_RECIPES from './data/data';

@@ -2,6 +2,7 @@ const DUMMY_RECIPES = [
   {
     id: '742e2ab2-f09b-4a1b-a135-e1fb6d8c60c3',
     name: 'Plain Pork',
+    rating: 4,
     cookTime: '0:45',
     servings: 4,
     instructions: [
@@ -17,6 +18,7 @@ const DUMMY_RECIPES = [
   {
     id: 'b81f71ca-dc26-11ec-bc5e-3fb8f3805862',
     name: 'Delicious Chicken',
+    rating: 3,
     cookTime: '1:45',
     servings: 5,
     instructions: [

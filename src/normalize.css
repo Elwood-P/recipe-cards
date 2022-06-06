@@ -336,6 +336,10 @@ ol {
   padding: 0;
 }
 
+li {
+  list-style-position: inside;
+}
+
 /**
  * Tailwind custom reset styles
  */

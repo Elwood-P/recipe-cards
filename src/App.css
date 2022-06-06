@@ -1,13 +1,39 @@
-/* Global */
+/* Custom Props */
 
-li {
-  list-style-position: inside;
+:root {
+  --gray-100: #f4f5f7;
+  --gray-150: #e5e7ec;
+  --gray-200: #d6dae1;
+  --gray-250: #c7ccd6;
+  --gray-300: #b8bfcc;
+  --gray-350: #a9b1c1;
+  --gray-400: #9aa3b6;
+  --gray-450: #8b96ab;
+  --gray-500: #7c88a0;
+  --gray-550: #727d94;
+  --gray-600: #687387;
+  --gray-650: #5e687b;
+  --gray-750: #545d6f;
+  --gray-800: #4a5262;
+  --gray-850: #404856;
+  --gray-900: #363d49;
+  --gray-950: #2c323d;
+
+  --orange: #fdb572;
 }
 
 /* UI */
+.page {
+  background-color: var(--gray-100);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  color: var(--gray-850);
+}
 
 .card {
+  background-color: #fff;
   padding: 2rem;
+  border-radius: 1rem;
 }
 
 .btn {
@@ -24,14 +50,23 @@ li {
 
 /* Recipe */
 
+.recipe-list {
+  display: grid;
+  justify-items: start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
 .recipe {
   display: grid;
   gap: 0.5rem;
 }
 
 .recipe__title {
-  font-size: 1.5rem;
-  font-weight: bold;
+  margin-top: -1rem;
+  font-family: 'DM Serif Text', serif;
+  font-size: 2.625rem;
+  font-weight: 500;
 }
 
 .recipe__btn-group {
@@ -40,5 +75,5 @@ li {
 }
 
 .recipe__section h4 {
-  font-weight: bold;
+  font-weight: 400;
 }
