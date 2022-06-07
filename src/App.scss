@@ -1,4 +1,4 @@
-/* Custom Props */
+/* Custom Properties */
 
 :root {
   --gray-100: #f4f5f7;
@@ -21,6 +21,8 @@
 
   --orange: #fdb572;
 }
+$gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.com/techhive-io/how-to-use-css-variables-with-sass-mixins-671e1f6067b3
+
 
 /* UI */
 .page {
@@ -32,6 +34,7 @@
 
 .card {
   background-color: #fff;
+  box-shadow: 0.4px 1.3px 2px -1.1px rgba($gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba($gray-250, 0.29), 2.6px 8.8px 9.2px -3.3px rgba($gray-250, 0.25);
   padding: 2rem;
   border-radius: 1rem;
 }

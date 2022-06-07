@@ -1,5 +1,5 @@
 import './normalize.css';
-import './App.css';
+import './App.scss';
 
 import DUMMY_RECIPES from './data/data';
 import RecipeList from './components/RecipeList';
