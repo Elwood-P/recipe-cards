@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactComponent as IconStar } from '../icons/icon-star.svg';
 
 const RecipeRating = ({ rating }) => {
   const printStars = () => {
@@ -6,7 +7,7 @@ const RecipeRating = ({ rating }) => {
     for (let i = 0; i < 5; i++) {
       let starClass;
       i < rating ? (starClass = 'star--on') : (starClass = 'star--off');
-      starsContent.push(<span className={starClass}>*</span>);
+      starsContent.push(<IconStar className={`star ${starClass}`} />);
     }
     return starsContent;
   };

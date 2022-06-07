@@ -39,7 +39,8 @@ $gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.co
 
 .card {
   background-color: #fff;
-  box-shadow: 0.4px 1.3px 2px -1.1px rgba($gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba($gray-250, 0.29), 2.6px 8.8px 9.2px -3.3px rgba($gray-250, 0.25);
+  box-shadow: 0.4px 1.3px 2px -1.1px rgba($gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba($gray-250, 0.29),
+    2.6px 8.8px 9.2px -3.3px rgba($gray-250, 0.25);
   padding: 2rem;
   border-radius: 1rem;
 }
@@ -78,7 +79,7 @@ $gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.co
 }
 
 .recipe__title {
-  margin-top: -.5rem;
+  margin-top: -0.5rem;
   font-family: 'DM Serif Text', serif;
   font-size: 2.625rem;
   line-height: 1;
@@ -92,4 +93,18 @@ $gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.co
 
 .recipe__section h4 {
   font-weight: 400;
+}
+
+.recipe__rating {
+  display: flex;
+  gap: .25rem;
+}
+
+.recipe {
+  .star--on {
+    color: var(--orange);
+  }
+  .star--off {
+    color: var(--gray-150);
+  }
 }
