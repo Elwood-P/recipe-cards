@@ -9,7 +9,7 @@ const Recipe = (props) => {
   return (
     <div className="card recipe">
       <header>
-        <h3 className="recipe__title">{name}</h3>
+        <h3 className="recipe__title hello">{name}</h3>
       </header>
       <section className="recipe__section">
         <RecipeRating rating={rating} />

@@ -9,7 +9,10 @@ function App() {
 
   return (
     <>
-      <RecipeList recipes={recipes} />
+      <div className="container">
+        <RecipeList recipes={recipes} />
+        <button className="btn">Add Recipe</button>
+      </div>
     </>
   );
 }

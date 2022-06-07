@@ -1,5 +1,4 @@
 /* Custom Properties */
-
 :root {
   --gray-100: #f4f5f7;
   --gray-150: #e5e7ec;
@@ -23,6 +22,12 @@
 }
 $gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.com/techhive-io/how-to-use-css-variables-with-sass-mixins-671e1f6067b3
 
+/* Layout */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(100%, 1200px);
+}
 
 /* UI */
 .page {
@@ -54,21 +59,29 @@ $gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.co
 /* Recipe */
 
 .recipe-list {
-  display: grid;
-  justify-items: start;
-  gap: 2rem;
+  display: flex;
+  margin-left: -2rem; /* gutter size offset */
+  width: auto;
   padding: 2rem;
+}
+
+.recipe-list__column {
+  padding-left: 2rem; /* gutter size */
+  background-clip: padding-box;
 }
 
 .recipe {
   display: grid;
   gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .recipe__title {
-  margin-top: -1rem;
+  margin-top: -.5rem;
   font-family: 'DM Serif Text', serif;
   font-size: 2.625rem;
+  line-height: 1;
   font-weight: 500;
 }
 
