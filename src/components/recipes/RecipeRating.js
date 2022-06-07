@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as IconStar } from '../icons/icon-star.svg';
+import { ReactComponent as IconStar } from '../../icons/icon-star.svg';
 
 const RecipeRating = ({ rating }) => {
   const printStars = () => {
