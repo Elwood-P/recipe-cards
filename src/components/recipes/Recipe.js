@@ -2,13 +2,14 @@ import React from 'react';
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
+import Card from '../UI/Card';
 import './Recipe.scss';
 
 const Recipe = (props) => {
   const { name, rating, cookTime, servings, instructions, ingredients } = props;
 
   return (
-    <div className="card recipe">
+    <Card cName="recipe">
       <header>
         <h3 className="recipe__title">{name}</h3>
       </header>
@@ -36,7 +37,7 @@ const Recipe = (props) => {
         <button className="btn">Edit</button>
         <button className="btn">Delete</button>
       </div>
-    </div>
+    </Card>
   );
 };
 

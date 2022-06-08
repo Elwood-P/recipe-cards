@@ -1,12 +1,14 @@
 import React from 'react';
+import './IngredientsList.scss';
 
 const IngredientsList = ({ ingredients }) => {
   return (
-    <ul>
+    <ul className="ingredients-list">
       {ingredients.map((ingredient) => {
         return (
-          <li key={ingredient.id}>
-            {ingredient.name}: {ingredient.amount}
+          <li className="ingredients-list__item" key={ingredient.id}>
+            <span>{ingredient.name}</span>
+            <span>{ingredient.amount}</span>
           </li>
         );
       })}

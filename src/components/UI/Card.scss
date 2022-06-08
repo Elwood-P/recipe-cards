@@ -1,0 +1,9 @@
+@use "../../vars";
+
+.card {
+  background-color: #fff;
+  box-shadow: 0.4px 1.3px 2px -1.1px rgba(vars.$gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba(vars.$gray-250, 0.29),
+    2.6px 8.8px 9.2px -3.3px rgba(vars.$gray-250, 0.25);
+  padding: 2rem;
+  border-radius: 1rem;
+}
