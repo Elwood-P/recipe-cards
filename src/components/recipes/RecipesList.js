@@ -1,6 +1,7 @@
 import React from 'react';
 import Recipe from './Recipe';
 import Masonry from 'react-masonry-css';
+import './RecipesList.scss';
 
 const RecipeList = ({ recipes }) => {
   const breakpoints = {

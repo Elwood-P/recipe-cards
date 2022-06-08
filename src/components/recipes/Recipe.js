@@ -2,6 +2,7 @@ import React from 'react';
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
+import './Recipe.scss';
 
 const Recipe = (props) => {
   const { name, rating, cookTime, servings, instructions, ingredients } = props;
@@ -9,16 +10,17 @@ const Recipe = (props) => {
   return (
     <div className="card recipe">
       <header>
-        <h3 className="recipe__title hello">{name}</h3>
+        <h3 className="recipe__title">{name}</h3>
       </header>
-      <section className="recipe__section">
+      <section className="recipe__section recipe__section--between">
+        <h4>Rating</h4>
         <RecipeRating rating={rating} />
       </section>
-      <section className="recipe__section">
+      <section className="recipe__section recipe__section--between">
         <h4>Cook Time</h4>
         <p>{cookTime}</p>
       </section>
-      <section className="recipe__section">
+      <section className="recipe__section recipe__section--between">
         <h4>Servings</h4>
         <p>{servings}</p>
       </section>
@@ -30,7 +32,7 @@ const Recipe = (props) => {
         <h4>Ingredients</h4>
         <IngredientsList ingredients={ingredients} />
       </section>
-      <div className="recipe__btn-group">
+      <div className="recipe__section recipe__section--buttons">
         <button className="btn">Edit</button>
         <button className="btn">Delete</button>
       </div>

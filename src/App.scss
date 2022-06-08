@@ -1,112 +1,26 @@
-/* Custom Properties */
-:root {
-  --gray-100: #f4f5f7;
-  --gray-150: #e5e7ec;
-  --gray-200: #d6dae1;
-  --gray-250: #c7ccd6;
-  --gray-300: #b8bfcc;
-  --gray-350: #a9b1c1;
-  --gray-400: #9aa3b6;
-  --gray-450: #8b96ab;
-  --gray-500: #7c88a0;
-  --gray-550: #727d94;
-  --gray-600: #687387;
-  --gray-650: #5e687b;
-  --gray-750: #545d6f;
-  --gray-800: #4a5262;
-  --gray-850: #404856;
-  --gray-900: #363d49;
-  --gray-950: #2c323d;
-
-  --orange: #fdb572;
-}
-$gray-250: #c7ccd6; // For rgba in box-shadow - could also use https://medium.com/techhive-io/how-to-use-css-variables-with-sass-mixins-671e1f6067b3
+@use 'vars';
 
 /* Layout */
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  width: min(100%, 1200px);
-}
-
-/* UI */
 .page {
+  padding-block: 12rem;
   background-color: var(--gray-100);
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   color: var(--gray-850);
 }
 
-/* Components */
+.container {
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/* UI */
 
 .card {
   background-color: #fff;
-  box-shadow: 0.4px 1.3px 2px -1.1px rgba($gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba($gray-250, 0.29),
-    2.6px 8.8px 9.2px -3.3px rgba($gray-250, 0.25);
+  box-shadow: 0.4px 1.3px 2px -1.1px rgba(vars.$gray-250, 0.15), 1px 3.4px 3.6px -2.2px rgba(vars.$gray-250, 0.29),
+    2.6px 8.8px 9.2px -3.3px rgba(vars.$gray-250, 0.25);
   padding: 2rem;
   border-radius: 1rem;
-}
-
-.btn {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  min-height: 2rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: lightgray;
-  font-size: 0.9rem;
-}
-
-/* Recipe */
-
-.recipe-list {
-  display: flex;
-  margin-left: -2rem; /* gutter size offset */
-  width: auto;
-  padding: 2rem;
-}
-
-.recipe-list__column {
-  padding-left: 2rem; /* gutter size */
-  background-clip: padding-box;
-}
-
-.recipe {
-  display: grid;
-  gap: 0.5rem;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.recipe__title {
-  margin-top: -0.5rem;
-  font-family: 'DM Serif Text', serif;
-  font-size: 2.625rem;
-  line-height: 1;
-  font-weight: 500;
-}
-
-.recipe__btn-group {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.recipe__section h4 {
-  font-weight: 400;
-}
-
-.recipe__rating {
-  display: flex;
-  gap: .25rem;
-}
-
-.recipe {
-  .star--on {
-    color: var(--orange);
-  }
-  .star--off {
-    color: var(--gray-150);
-  }
 }
