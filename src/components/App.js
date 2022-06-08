@@ -1,8 +1,8 @@
-import './normalize.css';
+import '../style/normalize.css';
 import './App.scss';
 
-import DUMMY_RECIPES from './data/data';
-import RecipeList from './components/recipes/RecipesList';
+import DUMMY_RECIPES from '../data/data';
+import RecipeList from './recipes/RecipesList';
 
 function App() {
   const recipes = DUMMY_RECIPES;
