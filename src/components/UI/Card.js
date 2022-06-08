@@ -1,4 +1,4 @@
-import './Card.scss';
+import './Card.css';
 
 const Card = ({children, cName}) => {
   return (

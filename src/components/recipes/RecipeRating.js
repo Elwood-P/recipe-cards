@@ -1,5 +1,5 @@
 import React from 'react';
-import './RecipeRating.scss';
+import './RecipeRating.css';
 import { ReactComponent as IconStar } from '../../icons/icon-star.svg';
 
 const RecipeRating = ({ rating }) => {

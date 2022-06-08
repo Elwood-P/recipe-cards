@@ -1,4 +1,5 @@
-import '../style/normalize.css';
+import '../styles/normalize.css';
+import '../styles/vars.css';
 import './App.scss';
 
 import DUMMY_RECIPES from '../data/data';

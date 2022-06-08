@@ -1,0 +1,11 @@
+.recipe__rating {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.recipe .star--on {
+  color: var(--orange);
+}
+.recipe .star--off {
+  color: var(--gray-150);
+}
