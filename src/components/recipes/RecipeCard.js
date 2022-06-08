@@ -3,9 +3,9 @@ import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
 import Card from '../UI/Card';
-import './Recipe.css';
+import './RecipeCard.css';
 
-const Recipe = (props) => {
+const RecipeCard = (props) => {
   const { name, rating, cookTime, servings, instructions, ingredients } = props;
 
   return (
@@ -41,4 +41,4 @@ const Recipe = (props) => {
   );
 };
 
-export default Recipe;
+export default RecipeCard;

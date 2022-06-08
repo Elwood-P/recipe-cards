@@ -1,7 +1,8 @@
 import React from 'react';
-import Recipe from './Recipe';
+import RecipeCard from './RecipeCard';
 import Masonry from 'react-masonry-css';
 import './RecipesList.css';
+import NewRecipeCard from './NewRecipeCard';
 
 const RecipeList = ({ recipes }) => {
   const breakpoints = {
@@ -13,8 +14,9 @@ const RecipeList = ({ recipes }) => {
   return (
     <Masonry breakpointCols={breakpoints} className="recipe-list" columnClassName="recipe-list__column">
       {recipes.map((recipe) => {
-        return <Recipe key={recipe.id} {...recipe} />;
+        return <RecipeCard key={recipe.id} {...recipe} />;
       })}
+      <NewRecipeCard />
     </Masonry>
   );
 };
