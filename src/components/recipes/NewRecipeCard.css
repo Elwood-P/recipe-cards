@@ -1,0 +1,5 @@
+.new-recipe-card {
+  display: grid;
+  place-content: center center;
+  min-height: 32rem;
+}
