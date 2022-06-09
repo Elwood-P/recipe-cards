@@ -2,10 +2,10 @@ import React from 'react';
 import './NewRecipeCard.css';
 import Card from '../UI/Card';
 
-const NewRecipeCard = () => {
+const NewRecipeCard = ({ addRecipeHandler }) => {
   return (
     <Card cName="new-recipe-card">
-      <button>Add New</button>
+      <button onClick={addRecipeHandler}>Add New</button>
     </Card>
   );
 };

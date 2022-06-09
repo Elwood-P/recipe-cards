@@ -6,12 +6,12 @@ import Card from '../UI/Card';
 import './RecipeCard.css';
 
 const RecipeCard = (props) => {
-  const { name, rating, cookTime, servings, instructions, ingredients } = props;
+  const { id, name, rating, cookTime, servings, instructions, ingredients, deleteRecipeHandler } = props;
 
   return (
     <Card cName="recipe">
       <header>
-        <h3 className="card__title">{name}</h3>
+        <h3 className="card__title">{name ? name : '\xa0'}</h3>
       </header>
       <section className="card__section card__section--between">
         <h4 className="card__section-title">Rating</h4>
@@ -26,7 +26,7 @@ const RecipeCard = (props) => {
         <p>{servings}</p>
       </section>
       <section className="card__section">
-        <h4>Instructions</h4>
+        <h4 className="card__section-title">Instructions</h4>
         <InstructionsList instructions={instructions} />
       </section>
       <section className="card__section">
@@ -35,7 +35,9 @@ const RecipeCard = (props) => {
       </section>
       <div className="card__section card__action-footer">
         <button className="btn">Edit</button>
-        <button className="btn">Delete</button>
+        <button className="btn" onClick={() => deleteRecipeHandler(id)}>
+          Delete
+        </button>
       </div>
     </Card>
   );

@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-css';
 import './RecipesList.css';
 import NewRecipeCard from './NewRecipeCard';
 
-const RecipeList = ({ recipes }) => {
+const RecipeList = ({ recipes, addRecipeHandler, deleteRecipeHandler }) => {
   const breakpoints = {
     default: 3,
     1040: 2,
@@ -14,9 +14,9 @@ const RecipeList = ({ recipes }) => {
   return (
     <Masonry breakpointCols={breakpoints} className="recipe-list" columnClassName="recipe-list__column">
       {recipes.map((recipe) => {
-        return <RecipeCard key={recipe.id} {...recipe} />;
+        return <RecipeCard key={recipe.id} {...recipe} deleteRecipeHandler={deleteRecipeHandler} />;
       })}
-      <NewRecipeCard />
+      <NewRecipeCard addRecipeHandler={addRecipeHandler}/>
     </Masonry>
   );
 };
