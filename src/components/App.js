@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-import '../styles/normalize.css';
-import '../styles/vars.css';
-import './App.scss';
+import { v4 as uuid } from 'uuid';
 
 import DUMMY_RECIPES from '../data/data';
 import RecipeList from './recipes/RecipesList';
-import { v4 as uuid } from 'uuid';
+import './App.scss';
+
+export const RecipeListContext = React.createContext();
 
 function App() {
   const [recipes, setRecipes] = useState(DUMMY_RECIPES);
@@ -33,12 +33,17 @@ function App() {
     });
   };
 
+  const recipeListContextValue = {
+    addRecipeHandler: addRecipeHandler,
+    deleteRecipeHandler: deleteRecipeHandler,
+  }
+
   return (
-    <>
+    <RecipeListContext.Provider value={recipeListContextValue}>
       <div className="container">
-        <RecipeList addRecipeHandler={addRecipeHandler} deleteRecipeHandler={deleteRecipeHandler} recipes={recipes} />
+        <RecipeList deleteRecipeHandler={deleteRecipeHandler} recipes={recipes} />
       </div>
-    </>
+    </RecipeListContext.Provider>
   );
 }
 

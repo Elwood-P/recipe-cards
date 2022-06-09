@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
 import Card from '../UI/Card';
 import './RecipeCard.css';
+import { RecipeListContext } from '../App';
 
 const RecipeCard = (props) => {
-  const { id, name, rating, cookTime, servings, instructions, ingredients, deleteRecipeHandler } = props;
+  const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
+
+  const {deleteRecipeHandler} = useContext(RecipeListContext);
 
   return (
     <Card cName="recipe">
