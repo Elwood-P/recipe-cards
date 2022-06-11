@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 
 import RecipeListContext from './RecipeListContext';
 import DUMMY_RECIPES from '../data/data';
 
 const RecipeListProvider = (props) => {
-  const [recipes, setRecipes] = useState(DUMMY_RECIPES);
+  const LOCAL_STORAGE_KEY = 'recipeCards.recipeList';
+  
+  const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(recipes));
+  }, [recipes]);
 
   const addRecipeHandler = () => {
     const newRecipe = {
