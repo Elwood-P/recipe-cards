@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import RecipeCard from './RecipeCard';
 import Masonry from 'react-masonry-css';
 import './RecipesList.css';
 import NewRecipeCard from './NewRecipeCard';
+import RecipeListContext from '../../store/RecipeListContext';
 
-const RecipeList = ({ recipes }) => {
-
+const RecipeList = () => {
+  const { recipes } = useContext(RecipeListContext);
   const breakpoints = {
     default: 3,
     1040: 2,

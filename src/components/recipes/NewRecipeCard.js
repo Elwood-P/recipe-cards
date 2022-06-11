@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import './NewRecipeCard.css';
 import Card from '../UI/Card';
-import { RecipeListContext } from '../App';
+import RecipeListContext from '../../store/RecipeListContext';
 
 const NewRecipeCard = () => {
   const { addRecipeHandler } = useContext(RecipeListContext);

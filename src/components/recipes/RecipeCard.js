@@ -4,7 +4,7 @@ import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
 import Card from '../UI/Card';
 import './RecipeCard.css';
-import { RecipeListContext } from '../App';
+import RecipeListContext from '../../store/RecipeListContext';
 
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
