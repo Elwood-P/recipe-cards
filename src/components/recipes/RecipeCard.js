@@ -9,10 +9,13 @@ import RecipeListContext from '../../store/RecipeListContext';
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients, editRecipeHandler, isEditing } = props;
 
+  // https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node TODO: Understand this better! Differences between useEffect...
   const cardRef = useCallback(
     (node) => {
       if (node !== null) {
-        if (isEditing.id === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
+        window.requestAnimationFrame(() => { // Wait for render - https://stackoverflow.com/a/28748160/1954838
+          if (isEditing.id === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
+        });
       }
     },
     [isEditing, id]

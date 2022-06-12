@@ -17,7 +17,7 @@ function App() {
       <div className="container">
         <RecipeList isEditing={isEditing} editRecipeHandler={editRecipeHandler} />
       </div>
-      {isEditing && <RecipeEditForm />}
+      {isEditing.state && <RecipeEditForm />}
     </RecipeListProvider>
   );
 }
