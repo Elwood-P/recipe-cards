@@ -7,7 +7,7 @@ import './RecipeCard.css';
 import RecipeListContext from '../../store/RecipeListContext';
 
 const RecipeCard = (props) => {
-  const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
+  const { id, name, rating, cookTime, servings, instructions, ingredients, editRecipeHandler } = props;
 
   const {deleteRecipeHandler} = useContext(RecipeListContext);
 
@@ -37,7 +37,7 @@ const RecipeCard = (props) => {
         <IngredientsList ingredients={ingredients} />
       </section>
       <div className="card__section card__action-footer">
-        <button className="btn">Edit</button>
+        <button className="btn" onClick={editRecipeHandler}>Edit</button>
         <button className="btn" onClick={() => deleteRecipeHandler(id)}>
           Delete
         </button>
