@@ -18,7 +18,7 @@ const RecipeList = ({ isEditing, editRecipeHandler }) => {
   return (
     <Masonry breakpointCols={breakpoints} className={`recipe-list ${isEditing && 'recipe-list--isediting'}`} columnClassName="recipe-list__column">
       {recipes.map((recipe) => {
-        return <RecipeCard key={recipe.id} {...recipe} editRecipeHandler={editRecipeHandler} />;
+        return <RecipeCard key={recipe.id} {...recipe} editRecipeHandler={editRecipeHandler} isEditing={isEditing} />;
       })}
       <NewRecipeCard />
     </Masonry>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
@@ -7,12 +7,21 @@ import './RecipeCard.css';
 import RecipeListContext from '../../store/RecipeListContext';
 
 const RecipeCard = (props) => {
-  const { id, name, rating, cookTime, servings, instructions, ingredients, editRecipeHandler } = props;
+  const { id, name, rating, cookTime, servings, instructions, ingredients, editRecipeHandler, isEditing } = props;
 
-  const {deleteRecipeHandler} = useContext(RecipeListContext);
+  const cardRef = useCallback(
+    (node) => {
+      if (node !== null) {
+        if (isEditing === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
+      }
+    },
+    [isEditing, id]
+  );
+
+  const { deleteRecipeHandler } = useContext(RecipeListContext);
 
   return (
-    <Card cName="recipe">
+    <Card ref={cardRef} cName="recipe">
       <header>
         <h3 className="card__title">{name ? name : '\xa0'}</h3>
       </header>
@@ -37,7 +46,9 @@ const RecipeCard = (props) => {
         <IngredientsList ingredients={ingredients} />
       </section>
       <div className="card__section card__action-footer">
-        <button className="btn" onClick={editRecipeHandler}>Edit</button>
+        <button className="btn" onClick={() => editRecipeHandler(id)}>
+          Edit
+        </button>
         <button className="btn" onClick={() => deleteRecipeHandler(id)}>
           Delete
         </button>

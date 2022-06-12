@@ -6,10 +6,10 @@ import RecipeList from './recipes/RecipesList';
 import RecipeEditForm from './recipes/RecipeEditForm';
 
 function App() {
-  const [isEditing, setIsEditing] = useState(true);
+  const [isEditing, setIsEditing] = useState(false);
 
-  const editRecipeHandler = () => {
-    setIsEditing((isEditing) => !isEditing);
+  const editRecipeHandler = (id) => {
+    setIsEditing((isEditing) => (!isEditing ? (isEditing = id) : (isEditing = false)));
   };
 
   return (
