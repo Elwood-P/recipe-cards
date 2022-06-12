@@ -12,7 +12,7 @@ const RecipeCard = (props) => {
   const cardRef = useCallback(
     (node) => {
       if (node !== null) {
-        if (isEditing === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
+        if (isEditing.id === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
       }
     },
     [isEditing, id]

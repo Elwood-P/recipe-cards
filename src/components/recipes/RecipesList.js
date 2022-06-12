@@ -13,10 +13,10 @@ const RecipeList = ({ isEditing, editRecipeHandler }) => {
     1040: 2,
     750: 1,
   };
-  if (isEditing) breakpoints = 1;
+  if (isEditing.state) breakpoints = 1;
 
   return (
-    <Masonry breakpointCols={breakpoints} className={`recipe-list ${isEditing && 'recipe-list--isediting'}`} columnClassName="recipe-list__column">
+    <Masonry breakpointCols={breakpoints} className={`recipe-list ${isEditing.state && 'recipe-list--isediting'}`} columnClassName="recipe-list__column">
       {recipes.map((recipe) => {
         return <RecipeCard key={recipe.id} {...recipe} editRecipeHandler={editRecipeHandler} isEditing={isEditing} />;
       })}

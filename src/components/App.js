@@ -9,7 +9,7 @@ function App() {
   const [isEditing, setIsEditing] = useState(false);
 
   const editRecipeHandler = (id) => {
-    setIsEditing((isEditing) => (!isEditing ? (isEditing = id) : (isEditing = false)));
+    setIsEditing((isEditing) => (!isEditing.state ? { id: id, state: true } : { id: id, state: false }));
   };
 
   return (
