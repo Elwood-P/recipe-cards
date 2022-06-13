@@ -46,6 +46,7 @@ const RecipeListProvider = (props) => {
     deleteRecipeHandler: deleteRecipeHandler,
     isEditing: isEditing,
     editRecipeHandler: editRecipeHandler,
+    setRecipes: setRecipes,
   };
 
   return <RecipeListContext.Provider value={recipeListContextValue}>{props.children}</RecipeListContext.Provider>;
