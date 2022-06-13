@@ -7,21 +7,21 @@ import './RecipeCard.css';
 import RecipeListContext from '../../store/RecipeListContext';
 
 const RecipeCard = (props) => {
-  const { id, name, rating, cookTime, servings, instructions, ingredients, editRecipeHandler, isEditing } = props;
+  const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
+  const { deleteRecipeHandler, editRecipeHandler, isEditing } = useContext(RecipeListContext);
 
-  // https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node TODO: Understand this better! Differences between useEffect...
+  // Scroll to card being editted - https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node TODO: Understand useCallBack better. Differences between useEffect...
   const cardRef = useCallback(
     (node) => {
       if (node !== null) {
-        window.requestAnimationFrame(() => { // Wait for render - https://stackoverflow.com/a/28748160/1954838
+        // Wait for render - https://stackoverflow.com/a/28748160/1954838
+        window.requestAnimationFrame(() => {
           if (isEditing.id === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
         });
       }
     },
     [isEditing, id]
   );
-
-  const { deleteRecipeHandler } = useContext(RecipeListContext);
 
   return (
     <Card ref={cardRef} cName="recipe">

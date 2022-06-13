@@ -1,23 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './App.scss';
 import RecipeListProvider from '../store/RecipeListProvider';
-import RecipeList from './recipes/RecipesList';
-import RecipeEditForm from './recipes/RecipeEditForm';
+import Recipes from './recipes/Recipes';
 
 function App() {
-  const [isEditing, setIsEditing] = useState(false);
-
-  const editRecipeHandler = (id) => {
-    setIsEditing((isEditing) => (!isEditing.state ? { id: id, state: true } : { id: id, state: false }));
-  };
-
   return (
     <RecipeListProvider>
-      <div className="container">
-        <RecipeList isEditing={isEditing} editRecipeHandler={editRecipeHandler} />
-      </div>
-      {isEditing.state && <RecipeEditForm />}
+      <Recipes />
     </RecipeListProvider>
   );
 }
