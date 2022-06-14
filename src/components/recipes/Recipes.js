@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import RecipeList from './RecipesList';
-import RecipeEditForm from './RecipeEditForm';
+import RecipeEditForm from './form/RecipeEditForm';
 
 import RecipeListContext from '../../store/RecipeListContext';
 

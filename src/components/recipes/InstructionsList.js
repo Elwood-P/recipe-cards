@@ -4,7 +4,7 @@ const InstructionsList = ({instructions}) => {
   return (
     <ol>
       {instructions.map((instruction) => {
-        return <li key={instruction.id}>{instruction.text}</li>;
+        return <li key={'InstructionListItem' + instruction.id}>{instruction.text}</li>;
       })}
     </ol>
   );
