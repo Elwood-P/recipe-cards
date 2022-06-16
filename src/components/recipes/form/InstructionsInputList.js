@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import { v4 as uuid } from 'uuid';
 
 import RecipeListContext from '../../../store/RecipeListContext';
-import InstructionInputGroup from './InstructionsInputGroup';
+import InstructionInputGroup from './InstructionInputGroup';
 
 const InstructionsInputList = ({ instructions, recipeEditingIndex }) => {
   const { setRecipes } = useContext(RecipeListContext);

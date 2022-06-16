@@ -76,7 +76,7 @@ const RecipeEditForm = () => {
           />
         </div>
         <InstructionsInputList instructions={recipes[recipeEditingIndex].instructions} recipeEditingIndex={recipeEditingIndex} />
-        <IngredientsInputList />
+        <IngredientsInputList ingredients={recipes[recipeEditingIndex].ingredients} recipeEditingIndex={recipeEditingIndex} />
       </form>
     </div>
   );
