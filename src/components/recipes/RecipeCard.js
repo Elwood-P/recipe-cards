@@ -1,10 +1,13 @@
 import React, { useContext, useCallback } from 'react';
+import SVG from 'react-inlinesvg';
+
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
 import RecipeRating from './RecipeRating';
 import Card from '../UI/Card';
-import './RecipeCard.css';
 import RecipeListContext from '../../store/RecipeListContext';
+import './RecipeCard.css';
+
 
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
@@ -49,11 +52,11 @@ const RecipeCard = (props) => {
         <IngredientsList ingredients={ingredients} />
       </section>
       <div className="card__section card__action-footer">
-        <button className="btn" onClick={() => editRecipeHandler(id)}>
-          Edit
+        <button className="card__btn card__btn--edit" onClick={() => editRecipeHandler(id)}>
+          <SVG src={'/icons/icon-pencil.svg'} />
         </button>
-        <button className="btn" onClick={() => deleteRecipeHandler(id)}>
-          Delete
+        <button className="card__btn card__btn--delete" onClick={() => deleteRecipeHandler(id)}>
+          <SVG src={'/icons/icon-x.svg'} />
         </button>
       </div>
     </Card>

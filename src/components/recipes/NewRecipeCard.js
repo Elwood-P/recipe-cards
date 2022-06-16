@@ -1,4 +1,6 @@
 import React, { useContext } from 'react';
+import SVG from 'react-inlinesvg';
+
 import './NewRecipeCard.css';
 import Card from '../UI/Card';
 import RecipeListContext from '../../store/RecipeListContext';
@@ -8,7 +10,9 @@ const NewRecipeCard = () => {
 
   return (
     <Card cName="new-recipe-card">
-      <button onClick={addRecipeHandler}>Add New</button>
+      <button className="new-recipe-card__btn" onClick={addRecipeHandler}>
+        <SVG src={'/icons/icon-x.svg'} />
+      </button>
     </Card>
   );
 };

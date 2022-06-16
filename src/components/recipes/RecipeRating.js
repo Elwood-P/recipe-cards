@@ -1,8 +1,8 @@
 import React from 'react';
 import { v4 as uuid } from 'uuid';
+import SVG from 'react-inlinesvg';
 
 import './RecipeRating.css';
-import { ReactComponent as IconStar } from '../../icons/icon-star.svg';
 
 const RecipeRating = ({ rating }) => {
   const printStars = () => {
@@ -10,7 +10,7 @@ const RecipeRating = ({ rating }) => {
     for (let i = 0; i < 5; i++) {
       let starClass;
       i < rating ? (starClass = 'star--on') : (starClass = 'star--off');
-      starsContent.push(<IconStar key={uuid()} className={`star ${starClass}`} />);
+      starsContent.push(<SVG key={uuid()} src={'/icons/icon-star.svg'} className={`star ${starClass}`} />);
     }
     return starsContent;
   };
