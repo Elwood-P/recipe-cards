@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { cloneDeep } from 'lodash';
 import { v4 as uuid } from 'uuid';
+import SVG from 'react-inlinesvg';
 
 import RecipeListContext from '../../../store/RecipeListContext';
 import InstructionInputGroup from './InstructionInputGroup';
@@ -18,8 +19,8 @@ const InstructionsInputList = ({ instructions, recipeEditingIndex }) => {
   };
 
   return (
-    <div className="input-group">
-      <h4>Instructions</h4>
+    <div className="form-section">
+      <h4 className="form-section__heading">Instructions</h4>
       {instructions.map((instruction, index) => {
         return (
           <InstructionInputGroup
@@ -30,7 +31,9 @@ const InstructionsInputList = ({ instructions, recipeEditingIndex }) => {
           />
         );
       })}
-      <button onClick={addInstructionHandler}>Add Instruction</button>
+      <button className="form__button-add" onClick={addInstructionHandler}>
+        <SVG src={'/icons/icon-x.svg'} />
+      </button>
     </div>
   );
 };

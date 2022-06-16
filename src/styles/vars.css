@@ -18,7 +18,11 @@
   --gray-800: #4a5262;
   --gray-850: #404856;
   --gray-900: #363d49;
+  --gray-900-rgb: 54, 61, 73; /* Needed for setting rgba opacity */
+  --gray-925: #313843;
   --gray-950: #2c323d;
 
   --orange: #fdb572;
+
+  --red: #ff7777;
 }
