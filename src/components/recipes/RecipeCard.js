@@ -8,7 +8,6 @@ import Card from '../UI/Card';
 import RecipeListContext from '../../store/RecipeListContext';
 import './RecipeCard.css';
 
-
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
   const { deleteRecipeHandler, editRecipeHandler, isEditing } = useContext(RecipeListContext);
@@ -51,13 +50,15 @@ const RecipeCard = (props) => {
         <h4 className="card__section-title">Ingredients</h4>
         <IngredientsList ingredients={ingredients} />
       </section>
-      <div className="card__section card__action-footer">
-        <button className="card__btn card__btn--edit" onClick={() => editRecipeHandler(id)}>
-          <SVG src={'/icons/icon-pencil.svg'} />
-        </button>
-        <button className="card__btn card__btn--delete" onClick={() => deleteRecipeHandler(id)}>
-          <SVG src={'/icons/icon-x.svg'} />
-        </button>
+      <div className="card__section">
+        <div className="card__action-footer">
+          <button className="card__btn card__btn--edit" onClick={() => editRecipeHandler(id)}>
+            <SVG src={'/icons/icon-pencil.svg'} />
+          </button>
+          <button className="card__btn card__btn--delete" onClick={() => deleteRecipeHandler(id)}>
+            <SVG src={'/icons/icon-x.svg'} />
+          </button>
+        </div>
       </div>
     </Card>
   );

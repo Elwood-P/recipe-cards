@@ -9,11 +9,13 @@ const NewRecipeCard = () => {
   const { addRecipeHandler } = useContext(RecipeListContext);
 
   return (
-    <Card cName="new-recipe-card">
-      <button className="new-recipe-card__btn" onClick={addRecipeHandler}>
-        <SVG src={'/icons/icon-x.svg'} />
-      </button>
-    </Card>
+    <div onClick={addRecipeHandler}>
+      <Card cName="new-recipe-card">
+        <button className="new-recipe-card__btn">
+          <SVG src={'/icons/icon-x.svg'} />
+        </button>
+      </Card>
+    </div>
   );
 };
 

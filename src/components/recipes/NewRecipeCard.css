@@ -2,6 +2,7 @@
   display: grid;
   place-content: center center;
   min-height: 32rem;
+  cursor: pointer;
 }
 
 .new-recipe-card__btn {
@@ -14,7 +15,7 @@
   border-radius: 100%;
   color: #fff;
 }
-.new-recipe-card__btn:hover {
+.new-recipe-card:hover .new-recipe-card__btn {
   background: var(--orange);
 }
 .new-recipe-card__btn svg {
