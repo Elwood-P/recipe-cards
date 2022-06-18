@@ -75,6 +75,7 @@
 }
 
 /* Input with delete */
+
 .input-with-delete {
   position: relative;
 }
@@ -101,6 +102,7 @@
 }
 
 /* Add Buttons */
+
 .form__button-add {
   height: 2.625rem;
   border: dashed 2px var(--gray-800);
