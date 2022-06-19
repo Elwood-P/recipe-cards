@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import './App.scss';
-import RecipeListProvider from '../store/RecipeListProvider';
-import Recipes from './recipes/Recipes';
+import './App.css';
+import RecipeListContext from '../store/RecipeListContext';
+import HomeLayout from './Layouts/HomeLayout';
+import EditRecipeLayout from './Layouts/EditRecipeLayout';
 
 function App() {
+  const { isEditing, recipes } = useContext(RecipeListContext);
   return (
-    <RecipeListProvider>
-      <Recipes />
-    </RecipeListProvider>
+    <div className="page">
+      {!isEditing.state && <HomeLayout />}
+      {isEditing.state && <EditRecipeLayout recipe={recipes[isEditing.index]} />}
+    </div>
   );
 }
 

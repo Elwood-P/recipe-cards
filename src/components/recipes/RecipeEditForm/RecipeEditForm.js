@@ -6,15 +6,13 @@ import InstructionsInputList from './InstructionsInputList';
 import IngredientsInputList from './IngredientsInputList';
 import './RecipeEditForm.css';
 
-const RecipeEditForm = () => {
-  const { recipes, isEditing, setRecipes } = useContext(RecipeListContext);
-
-  const recipeEditingIndex = recipes.findIndex((recipe) => recipe.id === isEditing.id);
+const RecipeEditForm = (recipe) => {
+  const { isEditing, setRecipes } = useContext(RecipeListContext);
 
   const inputChangeHandler = (e, recipeKey) => {
     setRecipes((recipes) => {
       let updatedRecipes = cloneDeep(recipes);
-      updatedRecipes[recipeEditingIndex][recipeKey] = e.target.value;
+      updatedRecipes[isEditing.index][recipeKey] = e.target.value;
       return updatedRecipes;
     });
   };
@@ -31,7 +29,7 @@ const RecipeEditForm = () => {
               className="input-group__input"
               type="text"
               id="form--recipe__name-input"
-              value={recipes[recipeEditingIndex].name}
+              value={recipe.name}
               onChange={(e) => inputChangeHandler(e, 'name')}
             />
           </div>
@@ -47,7 +45,7 @@ const RecipeEditForm = () => {
               type="number"
               min="0"
               max="5"
-              value={recipes[recipeEditingIndex].rating}
+              value={recipe.rating}
               onChange={(e) => inputChangeHandler(e, 'rating')}
             />
           </div>
@@ -59,7 +57,7 @@ const RecipeEditForm = () => {
               className="input-group__input"
               type="text"
               id="form--recipe__time-input"
-              value={recipes[recipeEditingIndex].cookTime}
+              value={recipe.cookTime}
               onChange={(e) => inputChangeHandler(e, 'cookTime')}
             />
           </div>
@@ -73,19 +71,13 @@ const RecipeEditForm = () => {
               type="number"
               min="1"
               max="20"
-              value={recipes[recipeEditingIndex].servings}
+              value={recipe.servings}
               onChange={(e) => inputChangeHandler(e, 'servings')}
             />
           </div>
         </div>
-        <InstructionsInputList
-          instructions={recipes[recipeEditingIndex].instructions}
-          recipeEditingIndex={recipeEditingIndex}
-        />
-        <IngredientsInputList
-          ingredients={recipes[recipeEditingIndex].ingredients}
-          recipeEditingIndex={recipeEditingIndex}
-        />
+        <InstructionsInputList instructions={recipe.instructions} />
+        <IngredientsInputList ingredients={recipe.ingredients} />
       </form>
     </div>
   );

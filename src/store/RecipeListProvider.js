@@ -6,7 +6,7 @@ import DUMMY_RECIPES from '../data/data';
 
 const RecipeListProvider = (props) => {
   const LOCAL_STORAGE_KEY = 'recipeCards.recipeList';
-  
+
   const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -15,7 +15,11 @@ const RecipeListProvider = (props) => {
   }, [recipes]);
 
   const editRecipeHandler = (id) => {
-    setIsEditing((isEditing) => (!isEditing.state ? { id: id, state: true } : { id: id, state: false }));
+    setIsEditing((isEditing) =>
+      !isEditing.state
+        ? { id: id, index: recipes.findIndex((recipe) => recipe.id === id), state: true }
+        : { ...isEditing, state: false }
+    );
   };
 
   const addRecipeHandler = () => {

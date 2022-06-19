@@ -4,17 +4,17 @@ import SVG from 'react-inlinesvg';
 
 import RecipeListContext from '../../../store/RecipeListContext';
 
-const InstructionInputGroup = ({ ingredient, ingredientIndex, recipeEditingIndex }) => {
-  const { setRecipes } = useContext(RecipeListContext);
+const InstructionInputGroup = ({ ingredient, ingredientIndex }) => {
+  const { setRecipes, isEditing } = useContext(RecipeListContext);
 
   const deleteInstructionHandler = (e, idToDelete) => {
     e.preventDefault();
     setRecipes((recipes) => {
       let updatedRecipes = cloneDeep(recipes);
-      const updatedIngredients = recipes[recipeEditingIndex].ingredients.filter(
+      const updatedIngredients = recipes[isEditing.index].ingredients.filter(
         (ingredient) => idToDelete !== ingredient.id
       );
-      updatedRecipes[recipeEditingIndex].ingredients = updatedIngredients;
+      updatedRecipes[isEditing.index].ingredients = updatedIngredients;
       return updatedRecipes;
     });
   };
@@ -22,7 +22,7 @@ const InstructionInputGroup = ({ ingredient, ingredientIndex, recipeEditingIndex
   const inputChangeHandler = (e, key) => {
     setRecipes((recipes) => {
       let updatedRecipes = cloneDeep(recipes);
-      updatedRecipes[recipeEditingIndex].ingredients[ingredientIndex][key] = e.target.value;
+      updatedRecipes[isEditing.index].ingredients[ingredientIndex][key] = e.target.value;
       return updatedRecipes;
     });
   };

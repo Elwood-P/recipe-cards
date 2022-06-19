@@ -6,14 +6,14 @@ import SVG from 'react-inlinesvg';
 import RecipeListContext from '../../../store/RecipeListContext';
 import IngredientInputGroup from './IngredientInputGroup';
 
-const IngredientsInputList = ({ ingredients, recipeEditingIndex }) => {
-  const { setRecipes } = useContext(RecipeListContext);
+const IngredientsInputList = ({ ingredients }) => {
+  const { setRecipes, isEditing } = useContext(RecipeListContext);
 
   const addIngredientHandler = (e) => {
     e.preventDefault();
     setRecipes((recipes) => {
       let updatedRecipes = cloneDeep(recipes);
-      updatedRecipes[recipeEditingIndex].ingredients.push({ id: uuid(), name: '', amount: '' });
+      updatedRecipes[isEditing.index].ingredients.push({ id: uuid(), name: '', amount: '' });
       return updatedRecipes;
     });
   };
@@ -31,7 +31,6 @@ const IngredientsInputList = ({ ingredients, recipeEditingIndex }) => {
             key={'IngredientInputGroup' + ingredient.id}
             ingredient={ingredient}
             ingredientIndex={index}
-            recipeEditingIndex={recipeEditingIndex}
           />
         );
       })}

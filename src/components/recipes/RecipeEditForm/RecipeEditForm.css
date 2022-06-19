@@ -2,12 +2,6 @@
 ------------------- */
 
 .form-container {
-  position: fixed;
-  height: 100vh;
-  width: 50%;
-  top: 0;
-  right: 0;
-  overflow-y: scroll;
   padding: 10rem;
   background: var(--gray-900);
   color: var(--gray-350);

@@ -16,12 +16,18 @@ const RecipeList = () => {
   if (isEditing.state) breakpoints = 1;
 
   return (
-    <Masonry breakpointCols={breakpoints} className={`recipe-list ${isEditing.state && 'recipe-list--isediting'}`} columnClassName="recipe-list__column">
-      {recipes.map((recipe) => {
-        return <RecipeCard key={recipe.id} {...recipe} />;
-      })}
-      <NewRecipeCard />
-    </Masonry>
+    <div className="container">
+      <Masonry
+        breakpointCols={breakpoints}
+        className={`recipe-list ${isEditing.state && 'recipe-list--isediting'}`}
+        columnClassName="recipe-list__column"
+      >
+        {recipes.map((recipe) => {
+          return <RecipeCard key={recipe.id} {...recipe} />;
+        })}
+        <NewRecipeCard />
+      </Masonry>
+    </div>
   );
 };
 
