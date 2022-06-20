@@ -18,7 +18,6 @@ const RecipeEditForm = (recipe) => {
   };
 
   return (
-    <div className="form-container">
       <form className="form form--recipe">
         <div className="form-section">
           <div className="input-group">
@@ -79,7 +78,6 @@ const RecipeEditForm = (recipe) => {
         <InstructionsInputList instructions={recipe.instructions} />
         <IngredientsInputList ingredients={recipe.ingredients} />
       </form>
-    </div>
   );
 };
 

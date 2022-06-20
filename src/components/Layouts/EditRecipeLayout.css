@@ -1,5 +1,27 @@
-.edit-page-container {
+.edit-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.edit-layout__card-column {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10rem 8rem 10rem 3rem;
+}
+
+.edit-layout__form-column {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10rem 3rem 10rem 8rem;
+  background: var(--gray-900);
+  color: var(--gray-350);
+}
+
+.edit-layout__card-column .card {
+  max-width: 36rem;
+}
+
+.edit-layout__form-column .form {
+  max-width: 36rem;
 }

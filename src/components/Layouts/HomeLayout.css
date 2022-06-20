@@ -1,7 +1,29 @@
 /* Layout */
 .home-layout {
-  padding-block: 12rem;
-  width: min(100%, 1200px);
+  display: grid;
+  gap: 7.5rem;
+  padding-block: 10rem;
+  width: min(100%, 1300px);
   margin-inline: auto;
-  padding-inline: 2rem;
+  padding-inline: 3rem;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* Typography */
+.hero__heading {
+  font-family: 'DM Serif Text', serif;
+  font-size: 4.25rem;
+  color: var(--gray-850);
+}
+
+.hero__text {
+  font-size: 1.25rem;
+  color: var(--gray-650);
 }
