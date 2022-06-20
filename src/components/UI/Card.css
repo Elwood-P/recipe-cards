@@ -51,17 +51,3 @@
   margin-inline:-0.75rem;
 }
 
-/* Card Button */
-
-.card__btn {
-  display: grid;
-  align-content: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 100%;
-  color: var(--gray-600);
-}
-.card__btn:hover {
-  background: var(--gray-100);
-}

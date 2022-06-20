@@ -58,7 +58,7 @@ const RecipeCard = (props) => {
             clickHandler={() => editRecipeHandler(id)}
           />
           <IconButton
-            cName="card__btn card__btn--delete"
+            cName="icon-button--card"
             iconName="icon-x"
             clickHandler={() => deleteRecipeHandler(id)}
           />

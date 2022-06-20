@@ -1,0 +1,14 @@
+/* Card Button */
+
+.icon-button {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 100%;
+  color: var(--gray-600);
+}
+.icon-button:hover {
+  background: var(--gray-100);
+}
