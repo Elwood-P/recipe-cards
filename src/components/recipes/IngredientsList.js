@@ -7,8 +7,8 @@ const IngredientsList = ({ ingredients }) => {
       {ingredients.map((ingredient) => {
         return (
           <li className="ingredients-list__item" key={ingredient.id}>
-            <span>{ingredient.name}</span>
-            <span>{ingredient.amount}</span>
+            <span>{ingredient.name ? ingredient.name : '\xa0'}</span>
+            <span>{ingredient.amount ? ingredient.amount : '\xa0'}</span>
           </li>
         );
       })}
