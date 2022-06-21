@@ -7,7 +7,8 @@ import DUMMY_RECIPES from '../data/data';
 const RecipeListProvider = (props) => {
   const LOCAL_STORAGE_KEY = 'recipeCards.recipeList';
 
-  const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
+  // const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
+  const [recipes, setRecipes] = useState( DUMMY_RECIPES);
   const [isEditing, setIsEditing] = useState(false);
   const addedRecipe = useRef(false);
 
