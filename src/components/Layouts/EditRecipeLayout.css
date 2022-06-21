@@ -27,3 +27,12 @@
 .edit-layout__form-column .form {
   max-width: 36rem;
 }
+
+/* Close button */
+
+.edit-layout__close {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2rem;
+}

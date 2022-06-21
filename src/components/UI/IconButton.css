@@ -10,5 +10,20 @@
   color: var(--gray-600);
 }
 .icon-button:hover {
+  color: var(--gray-600);
   background: var(--gray-100);
 }
+
+.icon-button--orange {
+  color: #fff;
+  background: var(--orange);
+}
+
+.icon-button--close {
+  color: var(--gray-350);
+}
+.icon-button--close:hover {
+  color: var(--gray-350);
+  background: var(--gray-950);
+}
+
