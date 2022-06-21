@@ -2,8 +2,9 @@ import React from 'react';
 
 const RecipeListContext = React.createContext({
   recipes: [],
+  setRecipes: () => {},
   addRecipeHandler: () => {},
-  deleteRecipeHandler: (idToDelete) => {},
+  deleteRecipeHandler: () => {},
   isEditing: {},
   editRecipeHandler: () => {},
 });
