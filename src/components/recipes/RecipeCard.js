@@ -53,7 +53,7 @@ const RecipeCard = (props) => {
       <div className="card__section">
         <div className="card__action-footer">
           <IconButton
-            cName={`icon-button--card ${isEditing.state ? 'icon-button--orange' : ''}`}
+            cName={`icon-button--card ${isEditing.state ? 'icon-button--on' : ''}`}
             iconName="icon-pencil"
             clickHandler={() => editRecipeHandler(id)}
           />

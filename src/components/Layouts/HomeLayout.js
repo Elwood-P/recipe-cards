@@ -9,8 +9,7 @@ const HomeLayout = () => {
       <header className="hero">
         <h1 className="hero__heading">Recipe Cards</h1>
         <p className="hero__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae lectus eget massa dignissim molestie
-          accumsan ut lorem. Suspendisse lorem metus.
+          A place to store your recipes.
         </p>
       </header>
       <RecipeList />

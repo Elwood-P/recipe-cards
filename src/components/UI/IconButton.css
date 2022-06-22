@@ -7,16 +7,15 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 100%;
-  color: var(--gray-600);
+  color: var(--gray-800);
 }
 .icon-button:hover {
-  color: var(--gray-600);
-  background: var(--gray-100);
+  color: var(--gray-800);
+  background: var(--gray-125);
 }
 
-.icon-button--orange {
-  color: #fff;
-  background: var(--orange);
+.icon-button--on {
+  background: var(--gray-125);
 }
 
 .icon-button--close {
