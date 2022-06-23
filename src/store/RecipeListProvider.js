@@ -8,8 +8,9 @@ const RecipeListProvider = (props) => {
   const LOCAL_STORAGE_KEY = 'recipeCards.recipeList';
 
   // const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
-  const [recipes, setRecipes] = useState( DUMMY_RECIPES);
+  const [recipes, setRecipes] = useState(DUMMY_RECIPES);
   const [isEditing, setIsEditing] = useState(false);
+  const [isModal, setIsModal] = useState(false);
   const addedRecipe = useRef(false);
 
   useEffect(() => {
@@ -17,13 +18,16 @@ const RecipeListProvider = (props) => {
   }, [recipes]);
 
   // Function is wrapped in useCallback so it can be called with useEffect - https://typeofnan.dev/fix-function-makes-the-dependencies-of-useEffect-hook-change-on-every-render-warning-in-react/
-  const editRecipeHandler = useCallback((id) => {
-    setIsEditing((isEditing) =>
-      !isEditing.state
-        ? { id: id, index: recipes.findIndex((recipe) => recipe.id === id), state: true }
-        : { ...isEditing, state: false }
-    );
-  }, [recipes, setIsEditing]);
+  const editRecipeHandler = useCallback(
+    (id) => {
+      setIsEditing((isEditing) =>
+        !isEditing.state
+          ? { id: id, index: recipes.findIndex((recipe) => recipe.id === id), state: true }
+          : { ...isEditing, state: false }
+      );
+    },
+    [recipes, setIsEditing]
+  );
 
   const addRecipeHandler = () => {
     const newRecipe = {
@@ -57,15 +61,19 @@ const RecipeListProvider = (props) => {
       isEditing.state = false;
       return isEditing;
     });
+
+    setIsModal(false);
   };
 
   const recipeListContextValue = {
-    recipes: recipes,
-    addRecipeHandler: addRecipeHandler,
-    deleteRecipeHandler: deleteRecipeHandler,
-    isEditing: isEditing,
-    editRecipeHandler: editRecipeHandler,
-    setRecipes: setRecipes,
+    recipes, // NB "recipes," === "recipes: recipes,"
+    addRecipeHandler,
+    deleteRecipeHandler,
+    isEditing,
+    editRecipeHandler,
+    setRecipes,
+    isModal,
+    setIsModal,
   };
 
   return <RecipeListContext.Provider value={recipeListContextValue}>{props.children}</RecipeListContext.Provider>;

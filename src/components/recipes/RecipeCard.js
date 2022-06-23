@@ -10,7 +10,7 @@ import './RecipeCard.css';
 
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
-  const { deleteRecipeHandler, editRecipeHandler, isEditing } = useContext(RecipeListContext);
+  const { editRecipeHandler, isEditing, setIsModal } = useContext(RecipeListContext);
 
   // Scroll to card being editted - https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node TODO: Understand useCallBack better. Differences between useEffect...
   const cardRef = useCallback(
@@ -60,7 +60,7 @@ const RecipeCard = (props) => {
           <IconButton
             cName="icon-button--card"
             iconName="icon-x"
-            clickHandler={() => deleteRecipeHandler(id)}
+            clickHandler={() => setIsModal(id)}
           />
         </div>
       </div>
