@@ -5,6 +5,7 @@ import RecipeListContext from '../store/RecipeListContext';
 import HomeLayout from './Layouts/HomeLayout';
 import EditRecipeLayout from './Layouts/EditRecipeLayout';
 import Modal from './UI/Modal';
+import Footer from './UI/Footer';
 
 function App() {
   const { isEditing, isModal, recipes } = useContext(RecipeListContext);
@@ -14,6 +15,7 @@ function App() {
         {!isEditing.state && <HomeLayout />}
         {isEditing.state && <EditRecipeLayout recipe={recipes[isEditing.index]} />}
       </div>
+      <Footer />
       {isModal && <Modal />}
     </>
   );
