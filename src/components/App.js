@@ -15,7 +15,7 @@ function App() {
         {!isEditing.state && <HomeLayout />}
         {isEditing.state && <EditRecipeLayout recipe={recipes[isEditing.index]} />}
       </div>
-      <Footer />
+      {!isEditing.state && <Footer />}
       {isModal && <Modal />}
     </>
   );
