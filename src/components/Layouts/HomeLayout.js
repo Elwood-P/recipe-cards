@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RecipeList from '../Recipes/RecipesList';
+import RecipesList from '../Recipes/RecipesList';
 import './HomeLayout.css';
 
 const HomeLayout = () => {
@@ -12,7 +12,7 @@ const HomeLayout = () => {
           A place to store your recipes.
         </p>
       </header>
-      <RecipeList />
+      <RecipesList />
     </div>
   );
 };

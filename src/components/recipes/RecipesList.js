@@ -5,7 +5,7 @@ import './RecipesList.css';
 import NewRecipeCard from './NewRecipeCard';
 import RecipeListContext from '../../store/RecipeListContext';
 
-const RecipeList = () => {
+const RecipesList = () => {
   const { recipes, isEditing } = useContext(RecipeListContext);
 
   let breakpoints = {
@@ -31,4 +31,4 @@ const RecipeList = () => {
   );
 };
 
-export default RecipeList;
+export default RecipesList;
