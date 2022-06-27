@@ -63,7 +63,6 @@ const RecipeListProvider = (props) => {
     });
 
     setIsModal(false);
-    console.log(isModal);
   };
 
   const recipeListContextValue = {
