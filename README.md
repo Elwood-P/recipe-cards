@@ -14,7 +14,7 @@ $ npm start
 $ git push origin main
 ```
 
-## Features
+## Skills practiced
 - State management and useState hook
 - Use of local storage to persist state
 - Props, Context and Provider to pass data
