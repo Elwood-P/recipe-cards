@@ -1,5 +1,5 @@
 # Recipe Cards
-> 🧑‍🏫 Part of a series of practice projects to learn React.  
+> Part of a series of practice projects to learn React.  
 > View project live: https://elwoodp-recipe-cards.netlify.app/
 
 ## Skills & Concepts practiced
