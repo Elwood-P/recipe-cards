@@ -26,7 +26,7 @@ $ npm start
 $ git push origin main
 ```
 
-## TODO
+## Todo
 - [ ] Refactor code with focus on:
   - [ ] Seperate handler functions from the thing they are doing
   - [ ] Clean up Context (only pass handlers?)
