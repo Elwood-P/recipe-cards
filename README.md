@@ -3,7 +3,7 @@
 > [View project live](https://elwoodp-recipe-cards.netlify.app/)
 
 ## Setup
-```bash
+```shell
 # Install dependencies
 $ npm install
 
