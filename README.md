@@ -4,9 +4,6 @@
 
 ## Setup
 ```shell
-# Install dependencies
-$ npm install
-
 # Run local server
 $ npm start
 
