@@ -1,6 +1,6 @@
 # Recipe Cards
 
-> A React-based project showcasing a recipe management application that allows users to add, edit, and delete recipes while persisting data in Local Storage. One of several projects undertaken to expand my knowledge of React.
+> A React-based project showcasing a recipe management application that allows users to add, edit, and delete recipes while persisting data in Local Storage. One of several projects undertaken to expand my knowledge of React.  
 > [View Project Live](https://elwoodp-recipe-cards.netlify.app/)
 
 ## Key Features
