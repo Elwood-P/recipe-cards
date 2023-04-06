@@ -8,7 +8,6 @@ const RecipeListProvider = (props) => {
   const LOCAL_STORAGE_KEY = 'recipeCards.recipeList';
 
   const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) ?? DUMMY_RECIPES);
-  // const [recipes, setRecipes] = useState(DUMMY_RECIPES);
   const [isEditing, setIsEditing] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const addedRecipe = useRef(false);
@@ -45,6 +44,7 @@ const RecipeListProvider = (props) => {
     });
     addedRecipe.current = newRecipe.id;
   };
+
   // Trigger editRecipeHandler only after new Recipe has been added
   useEffect(() => {
     if (addedRecipe.current) {
@@ -58,8 +58,7 @@ const RecipeListProvider = (props) => {
       return recipes.filter((recipe) => idToDelete !== recipe.id);
     });
     setIsEditing((isEditing) => {
-      isEditing.state = false;
-      return isEditing;
+      return { ...isEditing, state: false };
     });
 
     setIsModal(false);
