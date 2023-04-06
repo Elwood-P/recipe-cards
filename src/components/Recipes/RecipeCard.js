@@ -1,4 +1,4 @@
-import React, { useContext, useCallback } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 
 import IngredientsList from './IngredientsList';
 import InstructionsList from './InstructionsList';
@@ -11,19 +11,15 @@ import './RecipeCard.css';
 const RecipeCard = (props) => {
   const { id, name, rating, cookTime, servings, instructions, ingredients } = props;
   const { editRecipeHandler, isEditing, setIsModal } = useContext(RecipeListContext);
+  const cardRef = useRef(null);
 
-  // Scroll to card being editted - https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node TODO: Understand useCallBack better. Differences between useEffect...
-  const cardRef = useCallback(
-    (node) => {
-      if (node !== null) {
-        // Wait for render - https://stackoverflow.com/a/28748160/1954838
-        window.requestAnimationFrame(() => {
-          if (isEditing.id === id) node.scrollIntoView({ block: 'center' }); //TODO: Needs polyfill - https://github.com/magic-akari/seamless-scroll-polyfill
-        });
-      }
-    },
-    [isEditing, id]
-  );
+  useEffect(() => {
+    if (cardRef.current && isEditing.id === id) {
+      window.requestAnimationFrame(() => {
+        cardRef.current.scrollIntoView({ block: 'center' });
+      });
+    }
+  }, [isEditing, id]);
 
   return (
     <Card ref={cardRef} cName="recipe">
